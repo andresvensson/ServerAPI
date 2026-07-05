@@ -1,6 +1,8 @@
 # Own added
 notes.txt
 
+app/secret.py
+
 .idea/
 
 # Byte-compiled / optimized / DLL files
