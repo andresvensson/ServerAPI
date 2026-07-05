@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+from app.models import TemperatureReading
 
 app = FastAPI(
     title="Pico Temperature API",
@@ -23,4 +23,11 @@ def health():
         "version": "0.1.0",
     }
 
+
+@app.post("/api/v1/temperature")
+def receive_temperature(reading: TemperatureReading):
+    return {
+        "message": "Temperature received",
+        "reading": reading,
+    }
 
