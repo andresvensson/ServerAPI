@@ -28,7 +28,7 @@ def insert_temperature(reading):
         with connection.cursor() as cursor:
 
             sql = """
-                INSERT INTO temperature_readings_test
+                INSERT INTO sensor_readings_test
                 (
                     sensor,
                     temperature,
