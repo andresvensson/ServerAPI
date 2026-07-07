@@ -5,3 +5,4 @@ class TemperatureReading(BaseModel):
     sensor: str
     temperature: float
     battery_voltage: float
+    measured_at: datetime
