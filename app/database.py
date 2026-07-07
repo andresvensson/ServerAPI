@@ -33,7 +33,7 @@ def insert_temperature(reading):
                     sensor,
                     temperature,
                     battery_voltage,
-                    measured_at,
+                    measured_at
                 )
                 VALUES (%s, %s, %s, %s)
             """
