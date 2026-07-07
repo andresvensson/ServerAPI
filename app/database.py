@@ -33,10 +33,20 @@ def insert_temperature(reading):
                     sensor,
                     temperature,
                     battery_voltage,
-                    measured_at
+                    measured_at,
                 )
                 VALUES (%s, %s, %s, %s)
             """
+
+            print(sql)
+            print(
+                (
+                    reading.sensor,
+                    reading.temperature,
+                    reading.battery_voltage,
+                    reading.measured_at,
+                )
+            )
 
             cursor.execute(
                 sql,
@@ -44,6 +54,7 @@ def insert_temperature(reading):
                     reading.sensor,
                     reading.temperature,
                     reading.battery_voltage,
+                    reading.measured_at
                 ),
             )
 
