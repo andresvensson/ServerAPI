@@ -33,9 +33,12 @@ def insert_temperature(reading):
                     sensor,
                     temperature,
                     battery_voltage,
+                    wifi_rssi,
+                    uptime,
+                    firmware,
                     measured_at
                 )
-                VALUES (%s, %s, %s, %s)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
             """
 
             print(sql)
@@ -44,6 +47,9 @@ def insert_temperature(reading):
                     reading.sensor,
                     reading.temperature,
                     reading.battery_voltage,
+                    reading.wifi_rssi,
+                    reading.uptime,
+                    reading.firmware,
                     reading.measured_at,
                 )
             )
@@ -54,6 +60,9 @@ def insert_temperature(reading):
                     reading.sensor,
                     reading.temperature,
                     reading.battery_voltage,
+                    reading.wifi_rssi,
+                    reading.uptime,
+                    reading.firmware,
                     reading.measured_at
                 ),
             )
