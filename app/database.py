@@ -28,42 +28,35 @@ def insert_temperature(reading):
         with connection.cursor() as cursor:
 
             sql = """
-                INSERT INTO sensor_readings_test
+                INSERT INTO sensor_readings
                 (
                     sensor,
+                    sensor_type,
                     temperature,
+                    humidity,
                     battery_voltage,
                     wifi_rssi,
                     uptime,
                     firmware,
+                    boot_reason,
                     measured_at
                 )
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
-
-            print(sql)
-            print(
-                (
-                    reading.sensor,
-                    reading.temperature,
-                    reading.battery_voltage,
-                    reading.wifi_rssi,
-                    reading.uptime,
-                    reading.firmware,
-                    reading.measured_at,
-                )
-            )
 
             cursor.execute(
                 sql,
                 (
                     reading.sensor,
+                    reading.sensor_type,
                     reading.temperature,
+                    reading.humidity,
                     reading.battery_voltage,
                     reading.wifi_rssi,
                     reading.uptime,
                     reading.firmware,
-                    reading.measured_at
+                    reading.boot_reason,
+                    reading.measured_at,
                 ),
             )
 
